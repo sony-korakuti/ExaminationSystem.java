@@ -1,0 +1,89 @@
+package placement;
+import java.util.Scanner;
+public class Examination {
+		    static String username = "student";
+		    static String password = "1234";
+		    static Scanner sc = new Scanner(System.in);
+
+		    public static void main(String[] args) {
+		        if (login()) {
+		            System.out.println("\nLogin Successful!");
+		            startExam();
+		        } else {
+		            System.out.println("\nLogin Failed. Exiting...");
+		        }
+		    }
+
+		    static boolean login() {
+		        System.out.println("====== LOGIN ======");
+		        System.out.print("Enter Username: ");
+		        String user = sc.nextLine();
+
+		        System.out.print("Enter Password: ");
+		        String pass = sc.nextLine();
+
+		        return user.equals(username) && pass.equals(password);
+		    }
+
+		    static void startExam() {
+		        int score = 0;
+		        System.out.println("\n====== JAVA MCQ TEST ======\n");
+
+		        // Q1
+		        System.out.println("Q1. Which of the following is a valid data type in Java?");
+		        System.out.println("A. number\nB. int\nC. real\nD. doubleint");
+		        System.out.print("Answer: ");
+		        String ans1 = sc.nextLine();
+		        if (ans1.equalsIgnoreCase("B")) score++;
+
+		        // Q2
+		        System.out.println("\nQ2. Which keyword is used to create a class in Java?");
+		        System.out.println("A. new\nB. class\nC. define\nD. structure");
+		        System.out.print("Answer: ");
+		        String ans2 = sc.nextLine();
+		        if (ans2.equalsIgnoreCase("B")) score++;
+
+		        // Q3
+		        System.out.println("\nQ3. What does JVM stand for?");
+		        System.out.println("A. Java Virtual Method\nB. Java Very Large Machine\nC. Java Virtual Machine\nD. Java Verified Module");
+		        System.out.print("Answer: ");
+		        String ans3 = sc.nextLine();
+		        if (ans3.equalsIgnoreCase("C")) score++;
+
+		        // Q4
+		        System.out.println("\nQ4. Which method is the entry point of any Java program?");
+		        System.out.println("A. main()\nB. start()\nC. init()\nD. run()");
+		        System.out.print("Answer: ");
+		        String ans4 = sc.nextLine();
+		        if (ans4.equalsIgnoreCase("A")) score++;
+
+		        // Q5
+		        System.out.println("\nQ5. Which of these is not a loop structure in Java?");
+		        System.out.println("A. for\nB. while\nC. repeat\nD. do-while");
+		        System.out.print("Answer: ");
+		        String ans5 = sc.nextLine();
+		        if (ans5.equalsIgnoreCase("C")) score++;
+
+		        showResult(score);
+		    }
+
+		    static void showResult(int score) {
+		        System.out.println("\n====== RESULT ======");
+		        System.out.println("Total Questions: 5");
+		        System.out.println("Correct Answers: " + score);
+		        System.out.println("Wrong Answers: " + (5 - score));
+		        System.out.println("Your Score: " + (score * 20) + "%");
+
+		        if (score >= 3) {
+		            System.out.println("Result: PASS");
+		        } else {
+		            System.out.println("Result: FAIL");
+		        }
+
+		        System.out.println("\nThank you for taking the exam!");
+		    }
+		
+
+	}
+
+
